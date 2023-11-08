@@ -9,6 +9,10 @@ class User(BaseModel):
     id: str
     name: str
 
+class UserNoID(BaseModel):
+    username: str
+    email: str
+    
 users = []
 
 @router_user.post('/users', response_model=User, status_code=201)

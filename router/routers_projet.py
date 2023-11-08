@@ -6,10 +6,14 @@ from typing import List
 router = APIRouter()
 
 class Project(BaseModel):
-    id: str
+    id: int
     name: str
     description: str
 
+class ProjectNoID(BaseModel):
+    name: str
+    description: str
+    
 projects = []
 
 @router_projet.post('/projects', response_model=Project, status_code=201)
